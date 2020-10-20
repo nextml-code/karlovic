@@ -1,7 +1,7 @@
-from karlović.plugins.ensure_nonconflicting_plugins import ensure_nonconflicting_plugins
-from karlović.plugins.get_plugin_value import get_plugin_value
+from karlovic.plugins.ensure_nonconflicting_plugins import ensure_nonconflicting_plugins
+from karlovic.plugins.get_plugin_value import get_plugin_value
 from workflow.ignite.handlers import ModelCheckpoint
-from karlović.request_logger import log
+from karlovic.request_logger import log
 
 
 class ModelPlugin:

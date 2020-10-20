@@ -1,10 +1,10 @@
 import warnings
 from PIL import Image
 import bottle
-from karlović.middleware import middleware
-from karlović.api import default_api
-from karlović.execution_time import execution_time
-from karlović.request_logger import request_logger
+from karlovic.middleware import middleware
+from karlovic.api import default_api
+from karlovic.execution_time import execution_time
+from karlovic.request_logger import request_logger
 
 
 def argument_parser():

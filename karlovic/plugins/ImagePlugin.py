@@ -1,5 +1,5 @@
-from karlović.plugins.ensure_nonconflicting_plugins import ensure_nonconflicting_plugins
-from karlović.plugins.get_plugin_value import get_plugin_value
+from karlovic.plugins.ensure_nonconflicting_plugins import ensure_nonconflicting_plugins
+from karlovic.plugins.get_plugin_value import get_plugin_value
 from bottle import (
     abort,
     request
