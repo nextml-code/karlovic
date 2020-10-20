@@ -1,2 +1,2 @@
 # model-server
-Python server library for serving models
+Python library for serving models
