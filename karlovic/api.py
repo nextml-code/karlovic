@@ -1,6 +1,6 @@
 import bottle
 import base64
-from karlović.request_logger import log
+from karlovic.request_logger import log
 
 
 def default_api(app):
