@@ -7,7 +7,7 @@ from karlovic.execution_time import execution_time
 from karlovic.request_logger import request_logger
 
 
-def argument_parser():
+def arguments():
     import argparse
 
     parser = argparse.ArgumentParser()
