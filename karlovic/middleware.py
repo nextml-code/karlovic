@@ -1,20 +1,16 @@
-from bottle import (
-    hook,
-    request,
-    response
-)
+import bottle
 
 
-@hook('before_request')
+@bottle.hook('before_request')
 def strip_path():
-    request.environ['PATH_INFO'] = request.environ['PATH_INFO'].rstrip('/')
+    bottle.request.environ['PATH_INFO'] = bottle.request.environ['PATH_INFO'].rstrip(
+        '/')
 
 
-def apply_header(response, header):
-    response.headers[header[0]] = header[1]
+def use_middleware(app):
+    def apply_header(response, header):
+        response.headers[header[0]] = header[1]
 
-
-def middleware(app):
     @app.hook('after_request')
     def cors():
         cors_headers = [
@@ -27,4 +23,4 @@ def middleware(app):
             ))
         ]
         for header in cors_headers:
-            apply_header(response, header)
+            apply_header(bottle.response, header)

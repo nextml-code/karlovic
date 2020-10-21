@@ -1,13 +1,13 @@
 import warnings
 from PIL import Image
 import bottle
-from karlovic.middleware import middleware
-from karlovic.api import default_api
+from karlovic.middleware import use_middleware
+from karlovic.api import default_routes
 from karlovic.execution_time import execution_time
 from karlovic.request_logger import request_logger
 
 
-def argument_parser():
+def arguments():
     import argparse
 
     parser = argparse.ArgumentParser()
@@ -24,7 +24,7 @@ def argument_parser():
 def run_server(app):
     from cheroot.wsgi import Server
 
-    args = argument_parser()
+    args = arguments()
     server = Server(
         ('0.0.0.0', args.port),
         app,
@@ -61,7 +61,7 @@ def model_server(plugins, bottle_configuration_function):
     from cheroot.wsgi import Server
     configure_bottle(bottle_configuration_function)
     app = bottle.app()
-    middleware(app)
+    use_middleware(app)
     use_plugins(app, plugins)
-    default_api(app)
+    default_routes(app)
     return app, run_server(app)
