@@ -3,7 +3,7 @@ import base64
 from karlovic.request_logger import log
 
 
-def default_api(app):
+def default_routes(app):
     @app.route('/<:re:.*>', method="OPTIONS")
     def options():
         bottle.response.status = 204

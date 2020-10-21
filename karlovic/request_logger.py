@@ -1,4 +1,4 @@
-from bottle import request
+import bottle
 from functools import wraps
 import logging
 
@@ -16,7 +16,7 @@ def request_logger(fn):
     @wraps(fn)
     def _log(*args, **kwargs):
         actual_response = fn(*args, **kwargs)
-        log().info(f'{request.method} {request.url}')
+        log().info(f'{bottle.request.method} {bottle.request.url}')
 
         return actual_response
     return _log
