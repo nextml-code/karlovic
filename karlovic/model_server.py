@@ -1,4 +1,3 @@
-import warnings
 from PIL import Image
 import bottle
 from karlovic.middleware import use_middleware
