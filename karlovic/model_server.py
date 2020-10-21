@@ -7,26 +7,11 @@ from karlovic.execution_time import execution_time
 from karlovic.request_logger import request_logger
 
 
-def arguments():
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--port', default=80, type=int)
-    parser.add_argument('--model', default='model', type=str)
-
-    try:
-        __IPYTHON__
-        return parser.parse_known_args()[0]
-    except NameError:
-        return parser.parse_args()
-
-
-def run_server(app):
+def run_server(app, port):
     from cheroot.wsgi import Server
 
-    args = arguments()
     server = Server(
-        ('0.0.0.0', args.port),
+        ('0.0.0.0', port),
         app,
         server_name='<Server name from env implemented in the future>',
         numthreads=4,
@@ -57,11 +42,11 @@ def configure_bottle(configuration_function):
     return configuration_function(bottle)
 
 
-def model_server(plugins, bottle_configuration_function):
+def model_server(plugins, port=80, bottle_configuration_function=lambda bottle: None):
     from cheroot.wsgi import Server
     configure_bottle(bottle_configuration_function)
     app = bottle.app()
     use_middleware(app)
     use_plugins(app, plugins)
     default_routes(app)
-    return app, run_server(app)
+    return app, run_server(app, port)
