@@ -1,11 +1,7 @@
 
 
-def use_image_form(*args):
-    app = args[0]
-    routes = args[1:]
-
+def use_image_form(app, routes):
     for route in routes:
-
         @app.get(route + '/form')
         def _form_route():
             image_form = ((
@@ -18,5 +14,4 @@ def use_image_form(*args):
                 '<button type="submit">Submit</button>'
                 '</form>'
             ))
-
             return image_form
