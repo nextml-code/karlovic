@@ -41,7 +41,6 @@ def configure_bottle(configuration_function):
 
 
 def model_server(plugins, port=80, bottle_configuration_function=lambda bottle: None):
-    from cheroot.wsgi import Server
     configure_bottle(bottle_configuration_function)
     app = bottle.app()
     use_middleware(app)
