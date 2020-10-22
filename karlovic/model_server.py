@@ -6,13 +6,13 @@ from karlovic.execution_time import execution_time
 from karlovic.request_logger import request_logger
 
 
-def run_server(app, port):
+def run_server(app, port, server_name='karlovic-server'):
     from cheroot.wsgi import Server
 
     server = Server(
         ('0.0.0.0', port),
         app,
-        server_name='<Server name from env implemented in the future>',
+        server_name=server_name,
         numthreads=4,
     )
 

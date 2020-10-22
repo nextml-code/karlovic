@@ -2,6 +2,8 @@
 Model Server
 ============
 
+NOTE: Currently in beta development. Breaking changes may happen at any time.
+
 The Karlovic library aims to simplify the process of setting up a htts server that serves machine learning models.
 
 Install
