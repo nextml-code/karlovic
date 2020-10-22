@@ -1,5 +1,5 @@
-from PIL import Image
 import bottle
+
 from karlovic.middleware import use_middleware
 from karlovic.api import default_routes
 from karlovic.execution_time import execution_time
@@ -40,10 +40,13 @@ def configure_bottle(configuration_function):
     return configuration_function(bottle)
 
 
-def model_server(plugins, port=80, bottle_configuration_function=lambda bottle: None):
+def model_server(plugins, bottle_configuration_function=lambda bottle: None):
     configure_bottle(bottle_configuration_function)
+
     app = bottle.app()
+
     use_middleware(app)
     use_plugins(app, plugins)
     default_routes(app)
-    return app, run_server(app, port)
+
+    return app, run_server(app)
