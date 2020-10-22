@@ -6,17 +6,16 @@ from karlovic.execution_time import execution_time
 from karlovic.request_logger import request_logger
 
 
-def run_server(app, port, server_name='karlovic-server'):
+def run_server(app, server_name='karlovic-server'):
     from cheroot.wsgi import Server
 
-    server = Server(
-        ('0.0.0.0', port),
-        app,
-        server_name=server_name,
-        numthreads=4,
-    )
-
-    def _run_server():
+    def _run_server(port):
+        server = Server(
+            ('0.0.0.0', port),
+            app,
+            server_name=server_name,
+            numthreads=4,
+        )
         try:
             server.start()
         except KeyboardInterrupt:
