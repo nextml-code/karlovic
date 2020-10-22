@@ -40,7 +40,7 @@ Usage
     def hello(image):
       return "some response"
 
-    use_image_form(app, '/world')
+    use_image_form(app, ['/world'])
     # Creates GET '/world/form' that posts an
     # image to '/world'
 
