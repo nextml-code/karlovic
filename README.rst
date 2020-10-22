@@ -36,5 +36,13 @@ Usage
     def hello():
       return "<h1>Hello World</h1>"
 
+    @app.post('/world')
+    def hello(image):
+      return "some response"
+
+    use_image_form(app, '/world')
+    # Creates GET '/world/form' that posts an
+    # image to '/world'
+
     run_server()
 
