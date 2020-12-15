@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "karlovic"
+version = "0.1.4-beta"
+description = "Simple library for serving models"
+authors = ["Aiwizo <filip@aiwizo.com>"]
+license = "Apache 2.0"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+bottle = ">=0.12.18"
+cheroot = ">=8.3.0"
+"jaraco.functools" = ">=3.0.0"
+Pillow = ">=7.1.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.4"
+pytest = "^6.2.0"
+setuptools = "^51.0.0"
+wheel = "^0.36.2"
+twine = "^3.2.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
