@@ -1,9 +1,33 @@
 [tool.poetry]
 name = "karlovic"
 version = "0.0.0"
-description = "Simple library for serving models"
+description = "Can only serve machine learning models."
 authors = ["Aiwizo <filip@aiwizo.com>"]
-license = "Apache 2.0"
+license = "Apache-2.0"
+readme = "README.rst"
+repository = "https://github.com/aiwizo/karlovic"
+keywords = [
+    "api",
+    "server",
+    "machine",
+    "learning"
+]
+# some classifiers are added automatically, see https://python-poetry.org/docs/pyproject/#classifiers
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Other Environment",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/aiwizo/karlovic/issues"
 
 [tool.poetry.dependencies]
 python = "^3.6"
