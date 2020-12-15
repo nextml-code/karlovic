@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "karlovic"
-version = "0.1.4-beta"
+version = "0.0.0"
 description = "Simple library for serving models"
 authors = ["Aiwizo <filip@aiwizo.com>"]
 license = "Apache 2.0"
